@@ -6,6 +6,7 @@ from openpyxl import load_workbook
 
 def get_cells(ref, workbook):
     sheet, cells = ref.split("!")
+    sheet = sheet.strip("'")
     return workbook[sheet][cells]
 
 
