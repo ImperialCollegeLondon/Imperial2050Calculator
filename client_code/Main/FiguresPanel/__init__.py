@@ -61,7 +61,7 @@ class FiguresPanel(FiguresPanelTemplate):
 
     def build_warnings(self):
         self.warnings_panel.clear()
-        warnings = init_vals["layout"]["Warnings"]["Not required"]
+        warnings = init_vals["layout"].get("Warnings", {}).get("Not required", [])
 
         for key in warnings:
             name, output, plot_type, _ = warnings[key]

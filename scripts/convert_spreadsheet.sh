@@ -22,7 +22,7 @@ spreadsheet=$(realpath "$1")
 docker run --pull always --rm -it -u "$(id -u)":"$(id -g)" \
        -v "${spreadsheet}":/opt/excel_to_code/input.xlsx:ro \
        -v "$(pwd)":/opt/excel_to_code/work/ \
-       ghcr.io/imperialcollegelondon/calc2050_excel_to_code:main \
+       ghcr.io/imperialcollegelondon/calc2050_excel_to_code:icl \
        bash ./run.sh
 
 cp model/_interface2050.cpython-39-x86_64-linux-gnu.so model/interface2050.py server_code/
